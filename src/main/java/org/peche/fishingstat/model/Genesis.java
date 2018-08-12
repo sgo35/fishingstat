@@ -39,6 +39,10 @@ public class Genesis implements Serializable {
     private String shortName;
 
     @NotBlank
+    @Column(unique=true)
+    private String identifier;
+
+    @NotBlank
     private String description;
 
     @Column(nullable = false, updatable = false)
@@ -77,6 +81,20 @@ public class Genesis implements Serializable {
 	 */
 	public void setShortName(String shortName) {
 		this.shortName = shortName;
+	}
+
+	/**
+	 * @return the identifier
+	 */
+	public String getIdentifier() {
+		return identifier;
+	}
+
+	/**
+	 * @param identifier the identifier to set
+	 */
+	public void setIdentifier(String identifier) {
+		this.identifier = identifier;
 	}
 
 	/**
